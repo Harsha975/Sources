@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Popup</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      #pop {
+        border: 2px solid black;
+        /* position: absolute; */
+        border-radius: 10px;
+        width: 500px;
+        height: 420px;
+        color: grey;
+        top: 10;
+        /* display: none; */
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="divPopup" onclick="createPopup();"><button>Create popup</button></div>
+    <form action="#">
+      Enter you image :<input type="file" />
+      <br>
+      <button type="submit" onclick="pipop()">
+        submit
+      </button>
+    </form>
+
+    <div id="pop"></div>
+
+    <script type="text/javascript">
+      function createPopup(){
+      var popup = open("", "Popup", "width=300,height=200");
+      var txtOk = popup.document.createElement("TEXTAREA");
+      var aOk = popup.document.createElement("a");
+      aOk.innerHTML = "Click here";
+
+      popup.document.body.appendChild(txtOk);
+      popup.document.body.appendChild(aOk);
+      }
+
+      async function pipop() {
+        document.getElementById("pop").style.visibility = "visible";
+      }
+    </script>
+  </body>
+</html>
