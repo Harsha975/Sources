@@ -20,7 +20,7 @@
         color: #3e363f;
         font-family: "Lato", sans-serif;
         height: 100vh;
-        overflow: hidden;
+        /* overflow: hidden; */
       }
 
       .App {
@@ -139,7 +139,7 @@
         padding: 10px;
       }
       .container {
-        overflow: hidden;
+        /* overflow: hidden; */
         display: flex;
         justify-content: space-evenly;
         align-items: center;
@@ -148,8 +148,8 @@
         width: 98vw;
         height: 400px;
         /* visibility: hidden; */
-        position: absolute;
-        top: 50;
+        /* position: absolute; */
+        /* top: 50; */
       }
       .class {
         text-align: center;
@@ -184,7 +184,7 @@
         <input type="file" name="image1"/>
         <br>
         <input type="file" name="image2"/><br>
-        <button id="ff" type="submit">Submit</button>
+        <button id="ff" type="submit">View</button>
       </form>
     </div>
     {% if message %}
@@ -213,18 +213,32 @@
           segmentation or classification
         </p>
       </div>
+      <br>
+      
     </div>
+    <div class="class c1">
+        <h3>Result1</h3>
+        <img id="img3" alt="" />
+      </div>
+      <div class="class c2">
+        <h3>Result2</h3>
+        <img id="img4" alt=""  />
+      </div>
     {% endif %}
     <script>
       const videoPath1 = "{{index1}}";
-      console.log(videoPath1)
       const videoPath2 = "{{index2}}";
-      console.log("{{bg}}")
+      const videoPath3 = "{{index3}}";
+      const videoPath4 = "{{index4}}";
       const videoPlayer1 = document.getElementById("img1");
       videoPlayer1.src = videoPath1;
       const videoPlayer2 = document.getElementById("img2");
       videoPlayer2.src = videoPath2;
-      document.body.style.backgroundImage = 'url("{{bg}}")';
+      // document.body.style.backgroundImage = 'url("{{bg}}")';
+      const videoPlayer3 = document.getElementById("img3");
+      videoPlayer3.src = videoPath3;
+      const videoPlayer4 = document.getElementById("img4");
+      videoPlayer4.src = videoPath4;
     </script>
   </body>
 </html>
